@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*
+          float + display + overflow + position
+          1.float: right | left;   父元增添浮动后，仍然要清除浮动
+          2.display:inline-block | tabel-cell | table-caption 等更改容器格式不推荐
+          3.position:absolute | fixed 更改布局方式不推荐
+          4.overflow: auto | scroll | hidden
+          > overflow:hidden 额外的影响相对较少
+        */
+      .box {
+        background: red;
+        overflow: hidden;
+      }
+      .float {
+        width: 200px;
+        height: 200px;
+        background: white;
+        border: 1px solid black;
+        padding: 10px;
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <!--  问题在于：未计算浮动元素的高度。让父容器变成BFC即可 -->
+      <div class="float">浮动盒子</div>
+      <p>容器内容</p>
+    </div>
+  </body>
+</html>

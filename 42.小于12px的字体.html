@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 方式一： scale缩放 -->
+    <!-- <style>
+      .box {
+        font-size: 12px;
+        border: 1px solid red;
+      }
+      .box span {
+        display: inline-block;
+        transform: scale(0.5); /*缩小为6px*/
+        transform-origin: 100% 100%; /*放置模糊*/
+      }
+    </style>
+    <div class="box"><span>我是小于12号字的字体</span> 12号字字体</div> -->
+
+    <!-- 方式二： svg文字 -->
+    <style>
+      svg text {
+        font-size: 6px;
+      }
+    </style>
+    <svg width="100" height="20">
+      <text>
+        <tspan x="0" dy="6">我是6号文字</tspan>
+        <tspan x="0" dy="6">我是6号文字</tspan>
+      </text>
+    </svg>
+    <div style="font-size: 12px">我是12号文字</div>
+  </body>
+</html>

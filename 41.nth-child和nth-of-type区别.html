@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      /* 不管标签名称，只要奇数行是div即可*/
+      /* div:nth-child(2n) {
+        color: red;
+      } */
+      /* 先过滤标签名称，在选择基数 */
+      div:nth-of-type(2n + 1) {
+        color: red;
+      }
+    </style>
+    <body>
+      <div>我</div>
+      <span>很</span>
+      <div>帅</div>
+      <div>对</div>
+      <span>不</span>
+      <div>?</div>
+    </body>
+  </body>
+</html>
